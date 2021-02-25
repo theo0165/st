@@ -9,11 +9,9 @@ static char *font = "Fira Code:pixelsize=13:antialias=true:autohint=true";
 
 /* Spare fonts */
 static char *font2[] = {
-/*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
-/*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
 	"FontAwesome5Free:pixelsize=13:antialias=true:autohint=true",
-	"FontAwesome5Solid:pixelsize=13:antialias=true:autohint=true"
-	"FontAwesome5FreeBrands:pixelsize=13:antialias=true:autohint=true"
+	"FontAwesome5Solid:pixelsize=13:antialias=true:autohint=true",
+	"FontAwesome5FreeBrands:pixelsize=13:antialias=true:autohint=true",
 	"MesloLGS NF:pixelsize=13:antialias=true:autohint=true"
 };
 
@@ -104,6 +102,10 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
+/* bg opacity */
+float alpha = 0.85;
+
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
@@ -131,6 +133,7 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
+	"black",
 };
 
 
@@ -207,8 +210,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
 	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
-	{ TERMMOD,          XK_C,           clipcopy,       {.i =  0} },
-	{ TERMMOD,          XK_V,           clippaste,      {.i =  0} },
+	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
+	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
